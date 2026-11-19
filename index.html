@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALALAND - Tienda Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>VALALAND</h1>
+        <button id="btnVerCarrito" onclick="toggleCarrito()">
+            🛒 Carrito (<span id="contador-carrito">0</span>)
+        </button>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Nuestros Productos</h2>
+            <p>Elige tus favoritos y haz tu pedido directo a nuestro WhatsApp.</p>
+        </section>
+
+        <!-- Aquí JavaScript cargará los productos automáticamente -->
+        <section id="catalogo" class="grid-productos"></section>
+    </main>
+
+    <!-- Panel lateral del Carrito -->
+    <div id="modal-carrito" class="carrito-oculto">
+        <div class="carrito-contenido">
+            <div class="carrito-header">
+                <h3>Tu Pedido</h3>
+                <button class="btn-cerrar" onclick="toggleCarrito()">✕</button>
+            </div>
+            
+            <div id="lista-carrito">
+                <p class="carrito-vacio">Tu carrito está vacío.</p>
+            </div>
+
+            <div class="carrito-footer">
+                <p class="total-texto">Total: <span id="total-precio">$0</span></p>
+                <button id="btn-whatsapp" onclick="enviarPedidoWhatsApp()">
+                    Pedir por WhatsApp 📲
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
